@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::API
+    
     def encode_token(payload)
         # don't forget to hide your secret in an environment variable
         JWT.encode(payload, 'my_s3cr3t')
@@ -35,5 +36,5 @@ class ApplicationController < ActionController::API
       def authorized
         render json: { message: 'Please log in' }, status: :unauthorized unless logged_in?
       end
-      
+
     end

@@ -20,13 +20,13 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'image_processing', '~> 1.2'
 
 # Use JSON Web Token
-gem 'jwt'
+gem 'jwt', "~> 2.1"
 
 # Use Fast JSON API
 gem 'fast_jsonapi'
 
 # Active Model Serializers
-gem 'active_model_serializers', '~> 0.10.0'
+gem 'active_model_serializers', '~> 0.10.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :organizer_resources
   resources :blog_tags
   resources :resource_needs
-  resources :users, only: [:create]
+  resources :users, only: [:index, :create]
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
   resources :tags
