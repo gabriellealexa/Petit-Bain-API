@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   post '/login', to: 'auth#create'
   get '/profile', to: 'users#profile'
+  #testing two branches
   resources :tags
   resources :blogs
   resources :groups
