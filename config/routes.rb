@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   resources :blog_tags
   resources :resource_needs
   resources :users, only: [:create]
-  post '/login', to: 'auth#create'
-  get '/profile', to: 'users#profile'
-  #testing two branches
+  post "/login", to: "auth#login"
+  get "/auto_login", to: "auth#auto_login"
+  get "/user_is_authed", to: "auth#user_is_authed"
   resources :tags
   resources :blogs
   resources :groups
