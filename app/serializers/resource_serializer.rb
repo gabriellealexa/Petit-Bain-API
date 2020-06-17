@@ -1,5 +1,5 @@
 class ResourceSerializer < ActiveModel::Serializer
-    attributes :title, :details, :link
+    attributes :id, :title, :img, :details, :link, :organizers, :needs
     belongs_to :scope
 
     

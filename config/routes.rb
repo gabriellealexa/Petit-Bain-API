@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  resources :starred_organizers
+  resources :starred_resources
   resources :organizer_resources
   resources :blog_tags
   resources :resource_needs
-  resources :users, only: [:create]
+  resources :users, only: [:create, :index]
   post "/login", to: "auth#login"
   get "/auto_login", to: "auth#auto_login"
   get "/user_is_authed", to: "auth#user_is_authed"
