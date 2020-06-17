@@ -42,6 +42,12 @@ aacovid = Resource.create(title: "Covid-19 Mutual Aid Fund", img: "http://code.g
 atlsolid = Resource.create(title: "Atlanta Solidarity Fund", img: "http://code.gabriellealexa.com/icons/icon-solid.jpg", details: "Provides jail support, bail, and access to representation to individuals arrested in Atlanta.", link: "https://atlsolidarity.org/", scope_id: ga.id)
 
 
+bpj = Resource.create(title: "Black People's Justice Fund - Metro Phoenix", img: "http://code.gabriellealexa.com/icons/icon-bpjf.jpg", details: "Created in response to the targeting of Black people by police, BPJF believes putting people in cages is never the answer.", link: "https://secure.everyaction.com/lFZFGA1BpUa9kyYYgSxSKw2?fbclid=IwAR3YvwJy2ZFuGfVk0BL1rWX8UYOOx2Mbv8NVEV4MjlEXCSHDv-lx8l1H6IM", scope_id: az.id)
+tsc = Resource.create(title: "Tucson Second Chance Community Bail Fund", img: "http://code.gabriellealexa.com/icons/icon-tuc.jpg", details: "Established to address the disproportionate impact of the cash bail system on communities of color and vulnerable populations in Pima County", link: "https://watchtucson.com/", scope_id: az.id)
+
+covidwash = Resource.create(title: "COVID-19 Washoe County Mutual Aid Solidarity Network", img: "http://code.gabriellealexa.com/icons/icon-stay.jpg", details: "A Covid-19 mutual aid solidarity network, comprised of different grassroots organizations, movements and organizers, who are committed to organizing mutual material support in the community.", link: "https://www.washoecountymasn.org/", scope_id: nv.id)
+hands = Resource.create(title: "Wash-oe Hands Covid-19 Mutual Aid Relief Fund", img: "http://code.gabriellealexa.com/icons/icon-wash.jpg", details: "Relief for Nevadans during COVID-19 and beyond, prioritizing those who are most in need.", link: "https://www.washoehands.com/", scope_id: nv.id)
+
 
 ## Starred Resources for Admin
 
@@ -57,6 +63,10 @@ domestic = Organizer.create(title: "National Domestic Workers Alliance", img: "h
 
 # Nevada
 plan = Organizer.create(title: "PLAN – Mass Liberation Project", img: "http://code.gabriellealexa.com/icons/icon-plan.jpg", about: "A decarceration initiative @ Progressive Leadership of Nevada, focused on ending mass incarceration in Nevada and beyond.", website: "https://www.massliberationnv.org/", email: "massliberationnv@gmail.com")
+washmutual = Organizer.create(title: "Washoe County Mutual Aid Solidarity Network", img: "http://code.gabriellealexa.com/icons/icon-stay.jpg", about: "Washoe County Mutual Aid Solidarity Network is an all-volunteer grassroots network operating in washoe county, Nevada, connecting with multiple coalition partner throughout the region.", email: "contact@https://www.washoecountymasn.org")
+handsgrp = Organizer.create(title: "Wash-oe Hands", img: "http://code.gabriellealexa.com/icons/icon-wash.jpg", about: "Washoe Hands facilitates immediate short-term assistance by connecting community members. This is a place for individuals and organizations in Washoe County and Nevada to come together in the spirit of solidarity.", email: "hello@washoehands.com")
+
+
 
 # New York
 e4f = Organizer.create(title: "Equality for Flatbush", img: "http://code.gabriellealexa.com/icons/icon-eq.jpg", about: "Since March 25th, Equality for Flatbush (E4F) and the Brooklyn Anti-gentrification Network (BAN) have distributed non-perishable food, household and COVID-19 supplies to 340 households in 18 Brooklyn neighborhoods.", website: "http://www.equalityforflatbush.org/", email: "B4G@equalityforflatbush.org")
@@ -120,6 +130,8 @@ OrganizerResource.create(organizer_id: sis.id, resource_id: pitts.id)
 OrganizerResource.create(organizer_id: smiletrust2.id, resource_id: smilemutual.id)
 OrganizerResource.create(organizer_id: sws.id, resource_id: swrelief.id)
 OrganizerResource.create(organizer_id: aaa.id, resource_id: aacovid.id)
+OrganizerResource.create(organizer_id: handsgrp.id, resource_id: hands.id)
+OrganizerResource.create(organizer_id: washmutual.id, resource_id: covidwash.id)
 
 ## Resource-Needs Joiners
 
@@ -143,5 +155,8 @@ ResourceNeed.create(resource_id: smilemutual.id, need_id: gent.id)
 ResourceNeed.create(resource_id: swrelief.id, need_id: covid.id)
 ResourceNeed.create(resource_id: aacovid.id, need_id: covid.id)
 ResourceNeed.create(resource_id: atlsolid.id, need_id: bail.id)
+
+ResourceNeed.create(resource_id: hands.id, need_id: covid.id)
+ResourceNeed.create(resource_id: washmutual.id, need_id: covid.id)
 
 
