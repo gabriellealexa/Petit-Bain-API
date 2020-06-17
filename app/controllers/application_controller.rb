@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::API
-<<<<<<< HEAD
-    
-=======
     before_action :require_login
 
->>>>>>> medium
     def encode_token(payload)
         JWT.encode(payload, 'my_s3cr3t')
       end
