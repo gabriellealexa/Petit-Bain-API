@@ -1,8 +1,9 @@
 class ResourcesController < ApplicationController
+    skip_before_action :require_login
 
         def index
             resources = Resource.all 
-            render json: resources
+            render json: resources, include: 
         end
     
         def create
@@ -26,5 +27,5 @@ class ResourcesController < ApplicationController
         def resource_params 
             params.require(:resource).permit!
         end
-
+        
 end

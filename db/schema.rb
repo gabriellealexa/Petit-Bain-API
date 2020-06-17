@@ -10,17 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_06_005121) do
+ActiveRecord::Schema.define(version: 2020_06_15_004738) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "blog_tags", force: :cascade do |t|
-    t.integer "blog_id"
-    t.integer "tag_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -48,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_06_06_005121) do
 
   create_table "organizers", force: :cascade do |t|
     t.string "title"
+    t.string "img"
     t.string "about"
     t.string "website"
     t.string "email"
@@ -64,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_06_06_005121) do
 
   create_table "resources", force: :cascade do |t|
     t.string "title"
+    t.string "img"
     t.string "details"
     t.string "link"
     t.integer "scope_id"
@@ -78,6 +73,20 @@ ActiveRecord::Schema.define(version: 2020_06_06_005121) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "starred_organizers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "organizer_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "starred_resources", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "resource_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tags", force: :cascade do |t|
     t.string "tag_name"
     t.datetime "created_at", precision: 6, null: false
@@ -87,7 +96,6 @@ ActiveRecord::Schema.define(version: 2020_06_06_005121) do
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
-    t.string "bio"
     t.string "avatar"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
